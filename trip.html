@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal</title>
+    <!-- ==== Font Awesome ==== -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- ==== Bootstrap Framework ==== -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- ==== Owl Carousel Plugin ==== -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- ==== Magnific Popup Plugin ==== -->
+    <link rel="stylesheet" href="css/magnific-popup.min.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <!-- ==== Main Stylesheet ==== -->
+    <link rel="stylesheet" href="css/style.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        function getResult() {
+            var location = document.getElementById("location");
+            var result = document.getElementById("result");
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function () {
+                if(xmlHttp.readyState===4 && xmlHttp.status===200){
+                    var response=JSON.parse(xmlHttp.responseText);//接受到后台返回的数据并赋值给str
+                    console.log(response.result.today.temperature);
+                    result.innerHTML = response.result.today.temperature;
+                }
+            }
+            var locate = location.value;
+			var url = "http://127.0.0.1:3000/report?name="+locate;
+            xmlHttp.open('GET',url,true);
+            xmlHttp.send(null);
+        }
+    </script>
+</head>
+<body>
+<nav class="wrap-body fixed-top">
+    <div class="header">
+        <div id='cssmenu' class="align-right">
+            <ul>
+                <li class="active"><a href='#'><span></span></a></li>
+                <li><a href='home.php'><span>主页</span></a>
+                </li>
+                <li><a href='personal.php?userid=2017101088'><span>文章</span></a></li>
+                <li><a href='#'><span>旅游</span></a></li>
+                <li><a href='stars.php'><span>明星</span></a></li>
+                <li class='last'><a href='login.php'><span>退出</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="social--widget pb--5 text-center">
+    <ul class="nav">
+        <li><a data-toggle="modal" data-target="#weather"><i class="fa fa-mixcloud"></i></a></li>
+        <div class="modal fade" id="weather" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top:5% ">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">天气预报</h4>
+                    </div>
+                    <div class="modal-body" style="align-content: center">
+                        <input type="text" id="location" placeholder="请输入地点" class="form-control" required>
+                        <p id="result"></p>
+                        <input type="button" class="btn btn-default" onclick="getResult()" value="确认"></input>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ul>
+</div>
+</div>
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row" data-trigger="masonry">
+                    <div class="col-sm-4 col-xs-12 pb--60">
+                        <!-- Post Item Start -->
+                        <div class="post--item text-center">
+                            <!-- Post Image Start -->
+                            <div class="post--img">
+                                <img src="img/posts-img/index1.jpg" alt="">
+                            </div>
+                            <!-- Post Image End -->
+
+                            <!-- Post Category Start -->
+                            <div class="post--cat">
+                                <a href="./A-Frame.html" data-overlay="0.5" data-overlay-color="primary">VR</a>
+                            </div>
+                            <!-- Post Category End -->
+
+                            <!-- Post Title Start -->
+                            <div class="post--title">
+                                <h2 class="h3"><a href="sky.html" class="btn-link">天空之境——茶卡盐湖</a></h2>
+                            </div>
+                            <!-- Post Title End -->
+
+                            <!-- Post Excerpt Start -->
+                            <div class="post--excerpt">
+                                <p>茶卡盐湖，是位于青海省海西蒙古族藏族自治州乌兰县茶卡镇的天然结晶盐湖。
+                                    茶卡盐湖与塔尔寺、青海湖、孟达天池齐名，是“青海四大景”之一，被旅行者们称为中国“天空之镜”，被国家旅游地理杂志评为“人一生必去的55个地方”之一。</p>
+                            </div>
+                            <!-- Post Excerpt End -->
+
+                            <!-- Post Action Start -->
+                            <div class="post--action">
+                                <a href="sky.html" class="btn btn-default">更多</a>
+                            </div>
+                        </div>
+                        <!-- Post Item End -->
+                    </div>
+
+                    <div class="col-sm-4 col-xs-12 pb--60">
+                        <!-- Post Item Start -->
+                        <div class="post--item text-center">
+                            <!-- Post Image Start -->
+                            <div class="post--img">
+                                <img src="img/posts-img/index2.jpg" alt="">
+                            </div>
+                            <!-- Post Image End -->
+
+                            <!-- Post Category Start -->
+                            <div class="post--cat">
+                                <a href="#" data-overlay="0.5" data-overlay-color="primary">旅游</a>
+                            </div>
+                            <!-- Post Category End -->
+
+                            <!-- Post Title Start -->
+                            <div class="post--title">
+                                <h2 class="h3"><a href="#" class="btn-link">粉色沙滩 -哈勃岛</a></h2>
+                            </div>
+                            <!-- Post Title End -->
+
+                            <!-- Post Excerpt Start -->
+                            <div class="post--excerpt">
+                                <p>海洋中有种古老的动物--有孔虫,它们从5亿年前一直繁衍至今。
+                                    有孔虫可以分泌钙质或硅质,形成外壳，在其死后它们的外壳会成为沙滩堆积物的主要来源.有着红色或亮粉色外壳的有孔虫,就是哈伯岛粉色沙滩的创建者。</p>
+                            </div>
+                            <!-- Post Excerpt End -->
+
+                            <!-- Post Action Start -->
+                            <div class="post--action">
+                                <a href="#" class="btn btn-default">更多</a>
+                            </div>
+                        </div>
+                        <!-- Post Item End -->
+                    </div>
+
+                    <div class="col-sm-4 col-xs-12 pb--60">
+                        <!-- Post Item Start -->
+                        <div class="post--item text-center">
+                            <!-- Post Image Start -->
+                            <div class="post--img">
+                                <img src="img/posts-img/index3.jpg" alt="">
+                            </div>
+                            <!-- Post Image End -->
+
+                            <!-- Post Category Start -->
+                            <div class="post--cat">
+                                <a href="#" data-overlay="0.5" data-overlay-color="primary">旅游</a>
+                            </div>
+                            <!-- Post Category End -->
+
+                            <!-- Post Title Start -->
+                            <div class="post--title">
+                                <h2 class="h3"><a href="#" class="btn-link">蓝洞 -大巴哈马浅滩</a></h2>
+                            </div>
+                            <!-- Post Title End -->
+
+                            <!-- Post Excerpt Start -->
+                            <div class="post--excerpt">
+                                <p>蓝洞所在位置曾是一个巨大岩洞，多孔疏松的石灰质穹顶因重力及地震等原因而很巧合地坍塌出一个近乎完美的圆形开口，成为敞开的竖井。
+                                    当冰雪消融后，海水便倒灌入竖井，形成海中嵌湖的奇特蓝洞现象。</p>
+                            </div>
+                            <!-- Post Excerpt End -->
+
+                            <!-- Post Action Start -->
+                            <div class="post--action">
+                                <a href="#" class="btn btn-default">更多</a>
+                            </div>
+                        </div>
+                        <!-- Post Item End -->
+                    </div>
+                </div>
+                <div class="row" data-trigger="masonry">
+                    <div class="col-sm-4 col-xs-12 pb--60">
+                        <!-- Post Item Start -->
+                        <div class="post--item text-center">
+                            <!-- Post Image Start -->
+                            <div class="post--img">
+                                <img src="img/posts-img/index4.jpg" alt="">
+                            </div>
+                            <!-- Post Image End -->
+
+                            <!-- Post Category Start -->
+                            <div class="post--cat">
+                                <a href="#" data-overlay="0.5" data-overlay-color="primary">旅游</a>
+                            </div>
+                            <!-- Post Category End -->
+
+                            <!-- Post Title Start -->
+                            <div class="post--title">
+                                <h2 class="h3"><a href="#" class="btn-link">垦丁国家公园</a></h2>
+                            </div>
+                            <!-- Post Title End -->
+
+                            <!-- Post Excerpt Start -->
+                            <div class="post--excerpt">
+                                <p>垦丁国家公园是中国第一个国家级公园，也是台湾省的第一个国家公园，总面积为32，631公顷。
+                                    这里三面都是湛蓝的大海，东面是太平洋，西有台湾海峡，南临巴士海峡，北连南仁山，地形变化多端，景观资源丰富。</p>
+                            </div>
+                            <!-- Post Excerpt End -->
+
+                            <!-- Post Action Start -->
+                            <div class="post--action">
+                                <a href="#" class="btn btn-default">更多</a>
+                            </div>
+                        </div>
+                        <!-- Post Item End -->
+                    </div>
+
+                    <div class="col-sm-4 col-xs-12 pb--60">
+                        <!-- Post Item Start -->
+                        <div class="post--item text-center">
+                            <!-- Post Image Start -->
+                            <div class="post--img">
+                                <img src="img/posts-img/index5.jpg" alt="">
+                            </div>
+                            <!-- Post Image End -->
+
+                            <!-- Post Category Start -->
+                            <div class="post--cat">
+                                <a href="#" data-overlay="0.5" data-overlay-color="primary">旅游</a>
+                            </div>
+                            <!-- Post Category End -->
+
+                            <!-- Post Title Start -->
+                            <div class="post--title">
+                                <h2 class="h3"><a href="#" class="btn-link">凤凰古城</a></h2>
+                            </div>
+                            <!-- Post Title End -->
+
+                            <!-- Post Excerpt Start -->
+                            <div class="post--excerpt">
+                                <p>凤凰古城，建于清康熙四十三年，是湖南十大文化遗产之一，曾被路易·艾黎称赞为中国最美丽的小城，与云南丽江古城、山西平遥古城媲美，享有“北平遥、南凤凰”之名。
+                                    是国家历史文化名城，国家AAAA级景区。</p>
+                            </div>
+                            <!-- Post Excerpt End -->
+
+                            <!-- Post Action Start -->
+                            <div class="post--action">
+                                <a href="#" class="btn btn-default">更多</a>
+                            </div>
+                        </div>
+                        <!-- Post Item End -->
+                    </div>
+
+                    <div class="col-sm-4 col-xs-12 pb--60">
+                        <!-- Post Item Start -->
+                        <div class="post--item text-center">
+                            <!-- Post Image Start -->
+                            <div class="post--img">
+                                <img src="img/posts-img/index6.jpg" alt="">
+                            </div>
+                            <!-- Post Image End -->
+
+                            <!-- Post Category Start -->
+                            <div class="post--cat">
+                                <a href="#" data-overlay="0.5" data-overlay-color="primary">旅游</a>
+                            </div>
+                            <!-- Post Category End -->
+
+                            <!-- Post Title Start -->
+                            <div class="post--title">
+                                <h2 class="h3"><a href="#" class="btn-link">圣托里尼</a></h2>
+                            </div>
+                            <!-- Post Title End -->
+
+                            <!-- Post Excerpt Start -->
+                            <div class="post--excerpt">
+                                <p>圣托里尼岛(Santorini)，简称圣岛。白墙蓝顶的教堂，彩色的沙滩，让圣岛成为了最受游客欢迎的希腊岛屿。
+                                    公元前1500年巨大的火山爆发将岛一分为三，中心部分沉入海底，残留下的裂痕形成了如今海拔300米高左右的悬崖。</p>
+                            </div>
+                            <!-- Post Excerpt End -->
+
+                            <!-- Post Action Start -->
+                            <div class="post--action">
+                                <a href="#" class="btn btn-default">更多</a>
+                            </div>
+                        </div>
+                        <!-- Post Item End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="js/jquery-3.2.1.min.js"></script>
+<!-- ==== Bootstrap Framework ==== -->
+<script src="js/bootstrap.min.js"></script>
+<!-- ==== Owl Carousel Plugin ==== -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- ==== Magnific Popup Plugin ==== -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<!-- ==== Validation Plugin ==== -->
+<script src="js/jquery.validate.min.js"></script>
+<!-- ==== Match Height Plugin ==== -->
+<script src="js/jquery.matchHeight-min.js"></script>
+<!-- ==== Isotope Plugin ==== -->
+<script src="js/isotope.min.js"></script>
+<!-- ==== Footer Reveal Plugin ==== -->
+<script src="js/footer-reveal.min.js"></script>
+<!-- ==== Retina Plugin ==== -->
+<script src="js/retina.min.js"></script>
+<!-- ==== Main Script ==== -->
+<script src="js/main1.js"></script>
+</body>
+</html>
